@@ -24,7 +24,16 @@ jobs:
         python -m pip install --upgrade pip
         pip install ansible
 
+    - name: Set up SSH keys
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan -t rsa 13.201.58.33 >> ~/.ssh/known_hosts
+        chmod 644 ~/.ssh/known_hosts
+
     - name: Run Ansible playbook
-      run: ansible-playbook -i inventory.ini nginx-install.yml
+      run: ansible-playbook -i inventory.ini install_nginx.yml
       env:
         ANSIBLE_HOST_KEY_CHECKING: false
+
