@@ -32,6 +32,6 @@ jobs:
         echo -e "Host your_target_machine_ip\n\tStrictHostKeyChecking no\n" > ~/.ssh/config
 
     - name: Run Ansible playbook
-      run: ansible-playbook -i inventory.ini nginx-install.yml
+      run: ansible-playbook -i inventory.ini nginx-install-playbook.yaml
       env:
         ANSIBLE_HOST_KEY_CHECKING: false
