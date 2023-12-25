@@ -53,4 +53,4 @@ jobs:
 
       - name: Run Ansible Playbook
         run: |
-          ansible-playbook -i inventory.ini --private-key=/home/runner/.ssh/id_rsa -u ubuntu -b installngnix.yaml
+          ansible-playbook -i inventory.ini --private-key=/home/runner/.ssh/id_rsa -u ubuntu -b installnginx.yaml
