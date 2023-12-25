@@ -36,7 +36,7 @@ jobs:
       - name: Set up SSH Key
         run: |
           mkdir -p /home/runner/.ssh/
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > /home/runner/.ssh/id_rsa
+          echo "${{ secrets.PEM_KEY }}" > /home/runner/.ssh/id_rsa
           chmod 400 /home/runner/.ssh/id_rsa
         shell: bash
 
