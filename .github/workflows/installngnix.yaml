@@ -6,8 +6,9 @@
   tasks:
   - name: Install Nginx package
     apt:
-     name: nginx
-     state: present
+      name: nginx
+      state: present
+
   - name: Start Nginx service
     service:
       name: nginx
